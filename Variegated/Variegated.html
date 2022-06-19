@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variegated-Fashion & Beauty</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://kit.fontawesome.com/c6abc5668f.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    .nav {
+        width: 1200px;
+        margin: auto;
+        font-size: 14px;
+        display: flex;
+        border-bottom: 1px;
+        justify-content: space-between;
+    }
+
+    .store-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .tel {
+        padding: 10px 15px 10px 0;
+    }
+
+    .tel a {
+        text-decoration: none;
+        padding-right: 15px;
+        border-right: 1px solid grey;
+        color: #000;
+    }
+
+    .openhour {
+        padding: 10px 0px;
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+    }
+
+    .currency {
+        padding: 10px 15px;
+        border-right: 1px solid grey;
+    }
+
+    .shoppingcart {
+        padding: 10px 15px;
+        border-right: 1px solid grey;
+    }
+
+    .login {
+        padding: 10px 15px;
+        border-right: 1px solid grey;
+    }
+    .login a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    .search-bar {
+        padding: 10px 15px;
+    }
+
+    #search {
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: transparent;
+        width: 100px;
+    }
+
+    .menu-bar {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 20px 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-list ul {
+        display: flex;
+        padding: 10px;
+    }
+
+    .menu-list ul :nth-child(1) {
+        color: rgb(115, 115, 115);
+    }
+
+    .menu-list li {
+        padding: 20px;
+    }
+
+    .sns-list ul {
+        display: flex;
+    }
+
+    .sns-list li {
+        padding: 10px;
+    }
+
+    .sns-list a {
+        color: rgb(115, 115, 115);
+    }
+
+    /* ======================= */
+
+    .discount-bar{
+        background-color: #fff;
+        width: 1200px;
+        position: relative;
+        margin: auto;
+    }
+    .discount {
+        position: relative;
+        display: flex;
+        margin: auto;
+        justify-content: flex-start;
+        width: 1200px;
+        height: 549px;
+        background-image: url(discount.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .discount-text{
+        position:absolute;
+        left: 60px;
+        top: 120px;
+    }
+    .discount-tag{
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px ;
+        display:inline-block;
+    }
+    .discount-text h2 {
+        font-size: 50px;
+        margin: 20px 0 ;
+    }
+    .discount-text .line{
+        width: 50px;
+        height: 3px;
+        background-color: #000;
+        margin-bottom: 30px;
+    }
+    .discount-text p{
+        font-size: 20px;
+        margin-bottom: 20px;
+        color:rgb(134, 133, 133);
+    }
+    .discount-text a{
+        text-decoration: none;
+        color: #000;
+    }
+    .discount-item-group{
+        width: 1200px;
+        display: flex;
+        padding: 15px 0;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .discount-item{
+        text-align: center;
+        padding: 10px;
+        width: 330px;
+        margin: 30px 10px;
+    }
+    .discount-item h3{
+        font-size: 18px;
+    }
+    .discount-item p{
+        font-size: 14px;
+    }
+    #delivery{
+        background-color: rgb(260, 225, 225) ;
+    }
+    #panty{
+        background-color: rgb(260,235,225);
+    }
+    #student{
+        background-color: rgb(260,260,225);
+    }
+    .categories{
+        background-image: url(bg_cat.webp);
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+    .categories-main{
+        width: 1200px;
+        margin: auto;
+    }
+    .categories-item{
+        display: flex;
+        justify-content: space-between
+    }
+    .categories h2{
+        text-align: center;
+        padding: 40px;
+        font-size: 25px;
+    }
+    
+    .categories .line{
+        background-color: #000;
+        width: 40px;
+        height: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    .categories .a{
+        text-decoration: none;
+    }
+    .categories-item h3{
+        padding: 20px;
+        display: inline-block;
+        color: #000;
+    }
+    .cate-img{
+        width: 270px;
+    }
+
+    .favourite{
+        margin: auto;
+    }
+    .favourite-main{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 150px 0;
+    }
+    .favourite .favo-img{
+        position: relative;
+    }
+    .favo-img .favo-bg{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(216, 215, 215);
+        position:absolute;
+        top: -50px;
+        right: -50px;
+        z-index: -1;
+    }
+    .favo-text{
+        width: 600px;
+    }
+    .favo-text h2{
+        font-size: 40px;
+        padding-left: 100px;
+        margin: 50px 0;
+    }
+    .favo-text p{
+        width: 330px;
+        font-size: 18px;
+        padding-left: 100px;
+        margin-bottom: 30px;
+        line-height: 1.2;
+    }
+    .favo-text a{
+        padding-left: 100px;
+    }
+    .favo-text button{
+        border: none;
+        background-color: #000;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        width: 130px;
+        height: 45px;
+    }
+    #model-title{
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 25px;
+        font-weight: 350;
+    }
+    .models-main{
+        width: 1200px;
+        margin: auto;
+    }
+    .model-list{
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 1200px;
+        position: relative;
+        justify-content: space-between;
+
+    }
+    .model{
+        width: 270px;
+        height: 520px;
+        line-height: 1.4;
+        position: relative;
+        text-decoration: none;
+    }
+    .model h3{
+        font-size: 16px;
+        font-weight: 200;
+        margin-bottom: 10px;
+        color: #000;
+    }
+    .model span{
+        font-size: 10px;
+        color: #aaa;
+        margin-bottom: 5px;
+    }
+    .model p{
+        color: #000;
+        font-weight: 600;
+    }
+    .dealy{
+        background-image: url(banner4.webp);
+        text-align: center;
+        background-position: center;
+        height: 560px;
+    }
+    .dealy-main{
+        width: 1200px;
+        margin: auto;
+    }
+    .dealy p{
+        color: #fff;
+        padding-top: 150px;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+        font-weight: 400;
+    }
+    .dealy a{
+        text-decoration: none;
+        margin: auto;
+        justify-content: center;
+        justify-items: center;
+    }
+    .dealy h2{
+        font-size: 60px;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    #dealy-button{
+        color: #fff;
+        font-size: 12px;
+    }
+    .dealy-main .button{
+        width: 150px;
+        height: 45px;
+        background-color: #000;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .blog-list{
+        display: flex;
+        width: 1200px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .blog-main{
+        width: 1200px;
+        margin: auto;
+        padding: 70px;
+    }
+    .blog-item{
+        width: 570px;
+        position: relative;
+    }
+    .blog-main h2{
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .blog-text{
+        position: absolute;
+        width: 490px;
+        padding: 20px;
+        bottom: -100px;
+        right: -10px;
+        background-color: #ccc;
+    }
+    .blog-text h3{
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    .blog-text p{
+        margin-bottom: 15px;
+        color: #777;
+    }
+    .blog-text a{
+        text-decoration: none;
+        color: #aaa;
+    }
+    .blog-text span{
+        color: #aaa;
+    }
+    .news{
+        padding-top: 250px;
+        padding-bottom: 100px;
+    }
+    .news-main{
+        width: 1200px;
+        margin: auto;
+        background-color: #ddd;
+        display: flex;
+    }
+    .news-item{
+        width: 600px;
+        padding: 30px;
+    }
+    .news-item h2{
+        font-size: 23px;
+    }
+    .subscribe{
+        width: 600px;
+        padding: 20px;
+    }
+    .subscribe input{
+        border: none;
+        padding: 0 15px ;
+        height: 45px;
+        width: 350px;
+    }
+    .subscribe button{
+        border: none;
+        background-color: #000;
+        color: #fff;
+        font-size: 15px;
+        width: 120px;
+        height: 45px;
+    }
+    .insta{
+        font-size: 20px;
+        text-align: center;
+        padding: 50px;
+    }
+    .notfound{
+        width: 1200px;
+        margin: auto;
+        color: #aaa;
+    }
+    footer{
+        background-color: #000;
+        color: #fff;
+    }
+    .footer{
+        border-bottom: 1px solid #777;
+    }
+    .footer-main{
+        width: 1200px;
+        margin:  auto;
+        display: flex;
+    }
+    .footer-item{
+        width: 250px;
+        padding: 20px;
+        margin: 30px 0 30px;
+        line-height: 2;
+        color: #aaa;
+    }
+    .f-list{
+        list-style: none;
+    }
+    .footer-item h2{
+        color: #fff;
+    }
+    .f-list a{
+        text-decoration: none;
+        color: #aaa;
+        font-size: 14px;
+    }
+    .footer-bar{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .footer-bar p{
+        color: #aaa;
+    }
+    .f-sns{
+        display: flex;
+        align-items: center;
+    }
+    .f-sns a{
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <div class="store-info">
+            <div class="tel">
+                Call us:
+                <a href="tel=+3(800)2345-6789">+3(800)2345-6789</a>
+            </div>
+            <div class="openhour">
+                <p>7 Days a week from 9:00 am to 7:00 pm</p>
+            </div>
+        </div>
+        <div class="info">
+            <div class="currency">
+                USD,
+                <i class="fa-solid fa-dollar-sign"></i>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="shoppingcart">
+                <a href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+            <div class="login">
+                <a href="#">Login</a>
+            </div>
+            <div class="search-bar">
+                <input id="search" type="search" placeholder="Search...">
+            </div>
+            <div class="search-icon">
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="menu-bar">
+        <div class="menu-logo">
+            <a href="#"><img
+                    src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/themes/variegated/assets/images/logo.png"
+                    alt="Variegated"></a>
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li>HOME
+                    <a href="#"></a>
+                </li>
+                <li>ABOUT
+                    <a href="#"></a>
+                </li>
+                <li>FEATURES
+                    <a href="#">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>BLOG
+                    <a href="#">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>SHOP
+                    <a href="#">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li>CONTACTS
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sns-list">
+            <ul>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="discount-bar">
+        <div class="discount">
+            <div class="discount-text">
+                <div class="discount-tag">
+                    <span>-20% SALE</span>
+                </div>
+                <h2>BE A CHERRY ON PIE<br>IN ANY SITUATION</h2>
+                <div class="line"></div>
+                <P>Experiment, mix and showcase colors, textures and styles!<br>Be yourself and impress others!</P>
+                <a href="#">→Read More</a>
+            </div>
+            
+            
+        </div>
+        <div class="discount-item-group">
+                <div id="delivery" class="discount-item">
+                    <h3>FREE STANDARD DELIVERY</h3>
+                    <p>on order over $49</p>
+                </div>
+                <div id="panty" class="discount-item">
+                    <h3>30% OFF 100’s PANTYS</h3>
+                    <p>use code: pantyup 30</p>
+                </div>
+                <div id="student" class="discount-item">
+                    <h3>20% STUDENT DISCOUNT PLUS</h3>
+                    <p>free next day delivey, excludes sale.</p>
+                </div>
+            </div>
+    </div>
+    
+    <div class="categories">
+        <div class="categories-main">
+            <h2>SHOP CATEGORIES</h2>
+            <div class="categories-item">
+                <div class="cate">
+                    <a href="#">
+                        <div class="cate-img">
+                            <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/cat5-275x376.jpg" alt="">
+                        </div>
+                        <div class="cate-text">
+                            <div class="line"></div>
+                            <h3>Blazers</h3>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="cate">
+                    <a href="#">
+                        <div class="cate-img">
+                            <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/cat4-275x376.jpg" alt="">
+                        </div>
+                        <div class="cate-text">
+                            <div class="line"></div>
+                            <h3>Dresses</h3>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="cate">
+                    <a href="#">
+                        <div class="cate-img">
+                            <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/cat3-275x376.jpg" alt="">
+                        </div>
+                        <div class="cate-text">
+                            <div class="line"></div>
+                            <h3>Jumpsuits</h3>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="cate">
+                    <a href="#">
+                        <div class="cate-img">
+                            <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/cat2-275x376.jpg" alt="">
+                        </div>
+                        <div class="cate-text">
+                            <div class="line"></div>
+                            <h3>New Arrivals</h3>
+                    </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="favourite">
+        <div class="favourite-main">
+            <div class="favo-img">
+                <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/image.jpg" alt="">
+                <div class="favo-bg"></div>
+            </div>
+            <div class="favo-text">
+                <h2>FAVOURITE<br>BLOUSES</h2>
+                <p>Our new favourite blouses are defined by great all-over patterns and special details. Our new favourite blouses are defined by great all-over patterns and special details.</p>
+                <a href="#">
+                    <button>SHOP NOW</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="models">
+        <div class="models-main">
+            <h2 id="model-title">MOST RECENT POPULAR MODELS</h2>
+            <div class="model-list">
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Buttoned-shirt_2-270x343.jpg" alt="">
+                    </div>
+                    <span>BLAZERS JUMPSUITS</span>
+                    <h3>BUTTONED SHIRT</h3>
+                    <p>59.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Checked-tunic_1-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS BLAZERS DRESSES</span>
+                    <h3>CHECKED TUNIC</h3>
+                    <p>69.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Embroidered-shirt_1-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS BLAZERS DRESSES JUMPSUITS NEW ARRIVAL</span>
+                    <h3>EMBROIDERED SHIRT</h3>
+                    <p>36.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Faux-leather-jacket-with-flowing-lapels_1-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS BLAZERS NEW ARRIVEL</span>
+                    <h3>FAUX LEATHER JACKET WITH FLOWING LAPELS</h3>
+                    <p>96.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Lightweight-puffer-jacket_2-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS DRESSES JUMPSUITS</span>
+                    <h3>LIGHTWEIGHT PUFFER JACKET</h3>
+                    <p>54.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Polka-dot-shirt-dress_2-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS DRESSES</span>
+                    <h3>POLKA DOT SHIRT DRESS</h3>
+                    <p>66.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Ripped-denim-jacket_2-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS DRESSES JUMPSUITS</span>
+                    <h3>RIPPED DENIM JACKET</h3>
+                    <p>35.00$</p>
+                </a>
+                <a class="model" href="#">
+                    <div class="model-img">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/Suede-effect-dress_1-270x343.jpg" alt="">
+                    </div>
+                    <span>TROUSERS-SHORTS DRESSES JUMPSUITS</span>
+                    <h3>SUEDE EFFECT DRESS</h3>
+                    <p>89.00$</p>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="dealy">
+        <div class="dealy-main">
+            <p>DEALY DEALS</p>
+            <h2>MODERN CASUAL<br>ESSENTIALS</h2>
+            <a href="#">
+                <div class="button">
+                    <span id="dealy-button">SHOP NOW</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="blog">
+        <div class="blog-main">
+            <h2>LASTEST FROM BLOG</h2>
+            <div class="blog-list">
+                <div class="blog-item">
+                    <a href="#">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/image11-565x382.jpg" alt="">
+                    </a>
+                    <div class="blog-text">
+                        <h3>WHEN IN DOUBT, WEAR ROSE PUMPS</h3>
+                        <p>It’s always a good idea to invest in a good pair of nude pumps. It’s a timeless wardrobe staple just…</p>
+                        <span><a href="#">22 February, 2018</a></span>
+                        <span> - post by </span>
+                        <span><a href="">admin</a></span>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <a href="#">
+                        <img src="https://ld-wp.template-help.com/monstroid1/prod-14924/wp-content/uploads/2018/02/image12-565x382.jpg" alt="">
+                    </a>
+                    <div class="blog-text">
+                        <h3>HEM YOUR PANTS FOR A SHOE HEIGHT</h3>
+                        <p>A mistake many people make is wearing pants (or dresses) that are too long or too short for their shoes.…</p>
+                        <span><a href="#">22 February, 2018</a></span>
+                        <span> - post by </span>
+                        <span><a href="">admin</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news">
+        <div class="news-main">
+            <div class="news-item">
+                <h2>GET THE LATEST NEWS DELIVERED DAILY!</h2>
+            </div>
+            <div class="subscribe">
+                <input type="email" placeholder="Enter please your email">
+                <button>SUBSCRIBE</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="insta">
+        <p>@INSTAGRAM</p>
+    </div>
+    <div class="notfound">
+        <p>Post not found</p>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-main">
+                <div class="footer-item">
+                    <h2>CATEGORIES</h2>
+                    <ul class="f-list">
+                        <li><a href="#">Help & Contact Us</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Online Stores</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h2>OUR STORE</h2>
+                    <ul class="f-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h2>PROTFILE</h2>
+                    <ul class="f-list">
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">My account</a></li>
+                        <li><a href="#">Order tracking</a></li>
+                        <li><a href="#">Help & support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h2>ABOUT US</h2>
+                    <p>Variegated is the place where everyone can is able to find some clothing called to highlight one’s individuality! We are waiting right for you!</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <p>© 2022 Variegated. All Rights Reserved.</p>
+            <div class="f-sns">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
