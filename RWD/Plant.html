@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunPlant</title>
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://kit.fontawesome.com/c6abc5668f.js" crossorigin="anonymous"></script>
+    <style>
+        header {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            right: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        .menu-nav {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+        .menu-nav .home-menu{
+                display: none;
+            }
+
+        .menu-nav h2 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .menu-nav li {
+            padding: 10px;
+        }
+
+        header .logo img {
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header-icon {
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .header-icon .icon {
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-icon a {
+            padding: 10px;
+            display: block;
+        }
+
+        .collection {
+            background-image: url(https://cdn.shopify.com/s/files/1/0356/8343/4555/files/bg-slide10.jpg?v=1585303728);
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-top: 10%;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .colle-text {
+            margin-left: 10%;
+        }
+
+        .colle-text h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .colle-text span {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .colle-text a {
+            display: block;
+            letter-spacing: 3px;
+            text-align: center;
+            color: #fff;
+            background-color: black;
+            width: 140px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        .colle-text a:hover {
+            background-color: rgb(100, 200, 220);
+        }
+
+        .colle-pic {
+            width: 50%;
+        }
+
+        .colle-pic img {
+            width: 80%;
+        }
+
+        .benefits {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .benefits-banner {
+            text-align: center;
+        }
+
+        .benefits-banner h2 {
+            font-size: 30px;
+            color: green;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .benefits-banner p {
+            font-size: 15px;
+            line-height: 1.5;
+            font-style: italic;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .benefits-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .benefits-item h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .benefits-item p {
+            font-size: 15px;
+            color: #aaa;
+            padding-bottom: 30px;
+        }
+
+        .bene-textgroup-1 {
+            width: 35%;
+            text-align: right;
+        }
+
+        .bene-textgroup-2 {
+            width: 35%;
+            text-align: left;
+        }
+
+        .bene-pic {
+            width: 30%;
+        }
+
+        .bene-pic img {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row-cols-2 .col {
+            width: 50%;
+        }
+
+        [class*="cols-"]>.col {
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .staff-pick .col .pic img:last-of-type {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .staff-pick .col .pic {
+            position: relative;
+        }
+
+        .staff-pick .col .pic img {
+            width: 100%;
+            aspect-ratio: 221/248;
+        }
+
+        .staff-pick .cover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(200, 200, 200, 0.5);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .staff-pick .cover .icon-group {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            z-index: 4;
+        }
+
+        .staff-pick .cover .icon {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: .3s, 1s;
+        }
+
+        .staff-pick .cover .icon a{
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            margin: 0 15px;
+        }
+        .staff-pick .cover .icon i {
+            width: 50px;
+            height: 50px;
+            color: green;
+            line-height: 3em;
+            
+        }
+
+        .staff-pick .cover:hover {
+            opacity: 1;
+        }
+
+        .staff-pick .col .pic span {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            background-color: #518432;
+            color: #fff;
+            padding: 8px 2px;
+            text-align: center;
+            font-weight: bold;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            font-size: 13px;
+        }
+
+        .staff-pick .col h3 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            padding: 20px;
+        }
+
+        .staff-pick .col .price {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .staff-pick .col span {
+            text-align: center;
+            vertical-align: baseline;
+            font-size: 18px;
+        }
+
+        .staff-pick .col p {
+            text-align: center;
+            font-size: 12px;
+            vertical-align: baseline;
+        }
+
+        .video-banner {
+            background-image: url(https://cdn.shopify.com/s/files/1/0356/8343/4555/files/bg-video1.jpg?v=1585532362);
+            margin-bottom: 50px;
+            padding: 100px 0;
+        }
+
+        .video-text {
+            box-sizing: border-box;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .video-banner .video-text h2 {
+            font-size: 28px;
+            padding-bottom: 15px;
+            color: #518432;
+        }
+
+        .video-text p {
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .video-text a {
+            letter-spacing: 3px;
+            display: block;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 170px;
+            height: 50px;
+        }
+
+        .video-text span {
+            text-align: center;
+            display: block;
+            position: relative;
+        }
+
+        .video img {
+            width: 100%;
+        }
+
+
+        .instagram {
+            margin-bottom: 15px;
+        }
+
+        .insta-title {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 65px;
+        }
+
+        .insta-title h3 {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        .insta-group {
+            width: 100%;
+        }
+
+        .insta-group .col {
+            position: relative;
+        }
+
+        .insta-group .col .pic {
+            position: relative;
+        }
+
+        .insta-group .col .pic img {
+            width: 100%;
+        }
+
+        .insta-group .col div::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .insta-group .col div:hover::before {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .insta-group .col:nth-child(3),
+        .insta-group .col:nth-child(4) {
+            display: none;
+        }
+
+        footer {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        footer  p{
+            color: #949494;
+            font-size: 12px;
+        }
+
+        footer img {
+            width: 160px;
+            margin-bottom: 30px;
+        }
+
+        footer .text {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        footer .text a+a::before {
+            display: inline-block;
+            content: " ";
+            width: 20px;
+            height: 1px;
+            background-color: #000;
+            position: relative;
+            bottom: 4px;
+            margin-right: 25px;
+        }
+
+
+        footer .text a {
+            padding: 0 10px;
+        }
+
+        footer .icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        footer .icon a {
+            border: 2px solid black;
+            background-color: black;
+            color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            margin: 0 10px;
+            transition: .3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer .icon a::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 100%;
+            width: 40px;
+            height: 40px;
+            background-color: #518432;
+            transition: .5s;
+        }
+        footer .icon a i{
+            position: relative;
+        }
+        footer .icon a:hover::before{
+            top: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .menu-nav .home-menu{
+                background-color: #fff;
+                flex-wrap: wrap;
+                flex-direction: row;
+                position: absolute;
+                width: 1000px;
+                opacity: 0;
+            }
+            .menu-nav .home-menu li{
+                position: relative;
+                display: block;
+                width: 33.33333%;
+            }
+            .menu-nav .home-menu li img{
+                width: 100%;
+                margin-top: 10px;
+            }
+            .menu-nav .menu-item-home a:hover > .home-menu{
+                display: flex;
+                opacity: 1;
+                top: 50px;
+                left: 10px;
+                z-index: 10;
+            }
+
+            .video-banner {
+                display: flex;
+            }
+
+            .video-text {
+                width: 50%;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            .video {
+                width: 50%;
+            }
+
+            .insta-group .col:nth-child(3),
+            .insta-group .col:nth-child(4) {
+                display: block;
+            }
+        }
+
+
+        .row-cols-1 .col {
+            width: 100%;
+        }
+
+        .row-cols-2 .col {
+            width: 50%;
+        }
+
+        .row-cols-3 .col {
+            width: 33.333333%;
+        }
+
+        .row-cols-4 .col {
+            width: 25%;
+        }
+
+        .row-cols-5 .col {
+            width: 20%;
+        }
+
+        .row-cols-6 .col {
+            width: 16.666666%;
+        }
+
+        @media screen and (min-width: 768px) {
+            .row-cols-md-1 .col {
+                width: 100%;
+            }
+
+            .row-cols-md-2 .col {
+                width: 50%;
+            }
+
+            .row-cols-md-3 .col {
+                width: 33.333333%;
+            }
+
+            .row-cols-md-4 .col {
+                width: 25%;
+            }
+
+            .row-cols-md-5 .col {
+                width: 20%;
+            }
+
+            .row-cols-md-6 .col {
+                width: 16.666666%;
+            }
+        }
+
+        @media screen and (min-width: 920px) {
+            .row-cols-lg-1 .col {
+                width: 100%;
+            }
+
+            .row-cols-lg-2 .col {
+                width: 50%;
+            }
+
+            .row-cols-lg-3 .col {
+                width: 33.333333%;
+            }
+
+            .row-cols-lg-4 .col {
+                width: 25%;
+            }
+
+            .row-cols-lg-5 .col {
+                width: 20%;
+            }
+
+            .row-cols-lg-6 .col {
+                width: 16.666666%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .row-cols-xl-1 .col {
+                width: 100%;
+            }
+
+            .row-cols-xl-2 .col {
+                width: 50%;
+            }
+
+            .row-cols-xl-3 .col {
+                width: 33.333333%;
+            }
+
+            .row-cols-xl-4 .col {
+                width: 25%;
+            }
+
+            .row-cols-xl-5 .col {
+                width: 20%;
+            }
+
+            .row-cols-xl-6 .col {
+                width: 16.666666%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-menu">
+            <ul class="menu-nav">
+                <li class="menu-item-home">
+                    <a href="">
+                        <span>Home</span>
+                    </a>
+                    <ul class="home-menu row orw-cols-md-3">
+                        <li class="col">
+                            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/1.jpg?v=1585564604" alt="">
+                            <span>HOME1</span>
+                        </li>
+                        <li class="col">
+                            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/2.jpg?v=1585564605" alt="">
+                            <span>HOME2</span>
+                        </li>
+                        <li class="col">
+                            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/3.jpg?v=1585564604" alt="">
+                            <span>HOME3</span>
+                        </li>
+                        <li class="col">
+                            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/4.jpg?v=1585564605" alt="">
+                            <span>HOME4</span>
+                        </li>
+                        <li class="col">
+                            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/5.jpg?v=1585564604" alt="">
+                            <span>HOME5</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item-shop">
+                    <a href="">
+                        <span>Shop</span>
+                    </a>
+                </li>
+                <li class="menu-item-featured">
+                    <a href="">
+                        <span>Featured</span>
+                    </a>
+                </li>
+                <li class="menu-item-pages">
+                    <a href="">
+                        <span>Pages</span>
+                    </a>
+                </li>
+                <li class="menu-item-element">
+                    <a href="">
+                        <span>Element</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="logo">
+            <a href="#">
+                <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/logo.png?v=1585540695" alt="">
+            </a>
+        </div>
+        <div class="header-icon">
+            <div class="icon">
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="collection">
+        <div class="colle-text">
+            <h2>Collection New<br>Beautiful</h2>
+            <span>from $69</span>
+            <a href="#">
+                SHOP NOW
+            </a>
+        </div>
+        <div class="colle-pic">
+            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/slidesho10-small-1.png?v=1585303730"
+                alt="">
+        </div>
+    </div>
+    <div class="benefits">
+        <div class="benefits-banner">
+            <h2>The important benefits of<br>greenery for the environment and health</h2>
+            <p>Trees have always been considered as "lungs" of the earth. Planting lots of trees helps provide a great
+                deal of oxygen for us to breathe. <br>On average, one tree can provide enough oxygen for four people. At
+                the same time they also absorb C02, ammonia, S02, .. in the world!</p>
+        </div>
+        <div class="benefits-item">
+            <div class="bene-textgroup-1">
+                <h2>Reducing environmental pollution</h2>
+                <p>Trees have always been considered as "lungs" of the earth.</p>
+                <h2>Save water and reduce soil erosion</h2>
+                <p>Trees can slow down the evaporation of water, increasing air humidity.</p>
+                <h2>Reduce street temperatures</h2>
+                <p>Planting more trees in densely populated areas will not only make the air there more fresh
+                </p>
+            </div>
+            <div class="bene-pic">
+                <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/info-v2.jpg?v=1585303814" alt="">
+            </div>
+            <div class="bene-textgroup-2">
+                <h2>Energy conservation</h2>
+                <p>One tree can cool down, cool down 10 rooms</p>
+                <h2>Prevent ultraviolet influence</h2>
+                <p>Green trees become shade to block the sunlight from the road</p>
+                <h2>Improve human health</h2>
+                <p>Living in a quiet, cool, clean and fresh environment will make your health better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="staff-pick">
+        <div class="staff-pick-title">
+            <h2>Staff.Pick</h2>
+        </div>
+        <div class="container">
+            <div class="row row-cols-2 row-cols-md-3">
+                <div class="col">
+                    <div class="pic">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/products/186-large_default.jpg?v=1585273742"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/187-large_default.jpg?v=1585273742"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Sapien libero</h3>
+                    </a>
+                    <div class="price">
+                        <span>$150.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <span>SALE</span>
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/5.jpg?v=1585534433" alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/6.jpg?v=1585534424" alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Fringilla augue 360</h3>
+                    </a>
+                    <div class="price">
+                        <p>$200.00</p>
+                        <span>$150.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <span>SALE</span>
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/198-large_default_3b2e9138-0286-48ee-983f-c8fb82a3a443.jpg?v=1585273709"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/191-large_default_bdf68ca7-5284-412c-9fec-78235d9cd046.jpg?v=1585273709"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Faded Short Sleeves Variable</h3>
+                    </a>
+                    <div class="price">
+                        <p>$200.00</p>
+                        <span>$150.00</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/155-large_default.jpg?v=1585273757"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/157-large_default.jpg?v=1585273757"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Purple Flowers</h3>
+                    </a>
+                    <div class="price">
+                        <span>$180.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/1.jpg?v=1585533927" alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/3.jpg?v=1585533927" alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Adipiscing cursus Out Of Stock</h3>
+                    </a>
+                    <div class="price">
+                        <span>$450.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/203-large_default.jpg?v=1585273720"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/215-large_default.jpg?v=1585273720"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Fringilla augue</h3>
+                    </a>
+                    <div class="price">
+                        <span>$320.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <span>SALE</span>
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/160-large_default.jpg?v=1585273753"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/163-large_default.jpg?v=1585273753"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Purple Flowers</h3>
+                    </a>
+                    <div class="price">
+                        <p>$200.00</p>
+                        <span>$150.00</span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="pic">
+                        <span>SALE</span>
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/167-large_default.jpg?v=1585273748"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/169-large_default.jpg?v=1585273748"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Plant</h3>
+                    </a>
+                    <div class="price">
+                        <p>$200.00</p>
+                        <span>$150.00</span>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/169-large_default_b744dea4-d905-4693-bf53-0e838e05c1d5.jpg?v=1585273745"
+                            alt="">
+                        <img src="//cdn.shopify.com/s/files/1/0356/8343/4555/products/172-large_default.jpg?v=1585273745"
+                            alt="">
+                        <div class="cover">
+                            <div class="icon-group">
+                                <div class="icon">
+                                    <a href="#">
+                                        <i i class="fa-regular fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                    </a>
+                                </div>
+                                <div class="icon">
+                                    <a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <h3>Plant beautiful</h3>
+                    </a>
+                    <div class="price">
+                        <span>$150.00</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-banner">
+        <div class="video-text">
+            <h2>A number of our products</h2>
+            <p>Pick up all you need to keep your board in optimum condition with Decathlon’s set of surfboard
+                accessories.</p>
+            <a href="#">
+                <span>SHOP NOW</span>
+            </a>
+        </div>
+        <div class="video">
+            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/video1.jpg?v=1585303728" alt="">
+            <div class="video-play">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="instagram">
+        <div class="insta-title">
+            <i class="fa-brands fa-instagram"></i>
+            <h3>SHOP INSTAGRAM</h3>
+        </div>
+        <div class="insta-group">
+            <div class="row row-cols-2 row-cols-md-4">
+                <div class="col">
+                    <div class="pic">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram1.jpg?v=6541840606778977924"
+                            alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram2.jpg?v=11953683771741515241"
+                            alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram3.jpg?v=7058045833254573700"
+                            alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="pic">
+                        <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/instagram4.jpg?v=11697362171788349596"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <img src="https://cdn.shopify.com/s/files/1/0356/8343/4555/files/logo.png?v=1585540695" alt="">
+            <div class="text">
+                <a href="#">ABOUT US</a>
+                <a href="#">CUSTOMER SERVICE</a>
+                <a href="#">SUBSCRIPTION</a>
+            </div>
+            <div class="icon">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-basketball"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Website by ShopiLaunch . Copyright SunplantShop</p>
+        </div>
+    </footer>
+</body>
+
+</html>
