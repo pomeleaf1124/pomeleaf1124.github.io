@@ -65,6 +65,14 @@
             display: block;
         }
 
+        @media screen and (max-width: 768px) {
+            .menu-nav,
+            .cover .icon-group,
+            .staff-pick .cover .icon {
+                display: none;
+            }
+        }
+
         .collection {
             background-image: url(https://cdn.shopify.com/s/files/1/0356/8343/4555/files/bg-slide10.jpg?v=1585303728);
             position: relative;
@@ -103,6 +111,7 @@
 
         .colle-text a:hover {
             background-color: rgb(100, 200, 220);
+            transition: 0.5s;
         }
 
         .colle-pic {
@@ -188,6 +197,12 @@
             padding-right: 15px;
             box-sizing: border-box;
             margin-bottom: 20px;
+        }
+        .staff-pick-title h2{
+            text-align: center;
+            font-size: 30px;
+            color: #518432;
+            margin-bottom: 50px;
         }
 
         .staff-pick .col .pic img:last-of-type {
@@ -474,11 +489,13 @@
 
             .menu-nav .home-menu{
                 background-color: #fff;
+                display: none;
                 flex-wrap: wrap;
                 flex-direction: row;
                 position: absolute;
+                top: 50px;
+                left: 10px;
                 width: 1000px;
-                opacity: 0;
             }
             .menu-nav .home-menu li{
                 position: relative;
@@ -489,11 +506,8 @@
                 width: 100%;
                 margin-top: 10px;
             }
-            .menu-nav .menu-item-home a:hover > .home-menu{
-                display: flex;
-                opacity: 1;
-                top: 50px;
-                left: 10px;
+            .menu-nav .menu-item-home a:hover .home-menu{
+                display: block;
                 z-index: 10;
             }
 
