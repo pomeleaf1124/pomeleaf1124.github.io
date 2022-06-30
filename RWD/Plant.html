@@ -17,7 +17,7 @@
             background-color: #fff;
             right: 0;
             left: 0;
-            z-index: 3;
+            z-index: 10;
         }
 
         .menu-nav {
@@ -210,7 +210,13 @@
             top: 0;
             left: 0;
             opacity: 0;
+            width: 100%;
+            aspect-ratio: 221/248;
             transition: 0.5s;
+            z-index: 2;
+        }
+        .cover:hover  img:last-of-type{
+            opacity: 1;
         }
 
         .staff-pick .col .pic {
@@ -220,6 +226,7 @@
         .staff-pick .col .pic img {
             width: 100%;
             aspect-ratio: 221/248;
+            z-index: 1;
         }
 
         .staff-pick .cover {
@@ -231,8 +238,9 @@
             position: absolute;
             top: 0;
             left: 0;
-            background-color: rgba(200, 200, 200, 0.5);
+            background-color: rgba(227, 224, 224, 0.5);
             opacity: 0;
+            z-index: 3;
             transition: 0.3s;
         }
 
