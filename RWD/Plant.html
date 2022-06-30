@@ -641,6 +641,21 @@
                 width: 16.666666%;
             }
         }
+
+        .side-menu{
+            display: none;
+        }
+        @media screen and (max-width: 769px) {
+            .side-menu{
+                display: block;
+                align-items: center;
+                justify-content: center;
+            }
+            .side-menu-list{
+                display: none;
+            }
+        }
+
     </style>
 </head>
 
@@ -696,6 +711,43 @@
                     </a>
                 </li>
             </ul>
+            <div class="side-menu">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <div class="side-menu-list">
+                    <div class="side-menu-btn">
+                        <div class="menu-btn">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                            <p>MENU</p>
+                        </div>
+                        <div class="login-btn">
+                            <i class="fa-regular fa-circle-user"></i>
+                            <p>LOGIN</p>
+                        </div>
+                    </div>
+                    <div class="side-menu-item">
+                        <div class="side-home">
+                            <p>HOME</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="side-shop">
+                            <p>SHOP</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="side-featured">
+                            <p>FEATURED</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="side-page">
+                            <p>PAGES</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                        <div class="side-element">
+                            <p>ELEMENT</p>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="logo">
             <a href="#">
