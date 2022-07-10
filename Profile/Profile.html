@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 10px double black;
+            padding: 40px;
+            box-sizing: border-box;
+            border-radius: 50px;
+        }
+
+
+        h1 {
+            font-size: 50px;
+            background-color: antiquewhite;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .container img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        .main-pic {
+            width: 100%;
+            height: 52.08333333%;
+            border-radius: 5%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .info li {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .picture {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .pic-item {
+            width: 33.33333%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1></h1>
+        <div class="main-pic">
+            <img src="" alt="">
+        </div>
+
+        <div class="info">
+            <ul>
+            </ul>
+        </div>
+
+        <div class="picture">
+        </div>
+    </div>
+    <script>
+
+        let name = "example";
+        let email = "example@gmail.com";
+        let school = "school";
+        let hobby = "ex";
+        let mainimg2 = document.querySelector("img");
+        mainimg2.src = mainimg1;
+        let mainimg1 = "https://picsum.photos/300/200/?random=9";
+        let imgArray = [
+            "https://picsum.photos/300/200/?random=10",
+            "https://picsum.photos/300/200/?random=11",
+            "https://picsum.photos/300/200/?random=12"
+        ];
+
+
+
+
+        let info = document.querySelector("ul");
+        info.innerHTML = `<li>Name: ${name}</li>
+                        <li>E-mail: ${email}</li>
+                        <li>School: ${school}</li>
+                        <li>Hobby: ${hobby}</li>`;
+        let picturegroup = document.querySelector(".picture");
+
+        imgArray.forEach((jpg) => { picturegroup.innerHTML += `<div class="pic-item"><img src="${jpg}"></div>` })
+    </script>
+
+</body>
+
+</html>
