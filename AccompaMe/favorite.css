@@ -396,6 +396,7 @@ header{
   .main-container{
   padding-left: 35%;
 }
+}
 
 @media screen and (max-width: 768px) {
   .nav{
@@ -409,5 +410,4 @@ header{
   .group-card{
     justify-content: center;
   }
-  
 }
