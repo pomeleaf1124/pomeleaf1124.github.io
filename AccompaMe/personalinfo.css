@@ -127,7 +127,7 @@ header{
   margin: 16px 0;
 }
 
-/* ------------------ header end ---------------------------------- */
+/* ------------------ header end --------------------------- */
 /* ------------------nav start--------------------------- */
 
 
@@ -221,7 +221,7 @@ header{
     color: #000;
     font-weight: 800;
   }
-  .nav-user ul li .button .nav-button p:hover*{
+  .nav-user ul li .hover:hover{
     color: #eeedec;
   }
 
